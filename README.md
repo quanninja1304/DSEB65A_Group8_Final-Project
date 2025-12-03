@@ -170,12 +170,21 @@ Gr8_Final_Phase1_2/
 └── source_mapping.pkl                   
 ```
 
+### 🔑 Key File Descriptions
 
-### Key File Descriptions:
-- **02_Preparation_and_Analysis.ipynb**: The heavy lifter. It imports `dynamics_multicore` to run calculations on 37.5M rows and exports clean, small CSVs to `Data/prepared/`.
-- **dynamics_multicore.py**: A custom Python module implementing Byte-Level Chunking and Sharded Writing to handle large datasets efficiently.
-- **Data/prepared/**: Stores the "Gold" — the aggregated, analysis-ready datasets used for visualization.
+- **01_EDA_Raw.ipynb**: *The "Diagnosis"*.  
+Performs initial health checks on the raw data, identifying fragmentation, skewness, and structural issues.
 
+- **02_Preparation_and_Analysis.ipynb**: *The "Master Engine"*.  
+This single notebook handles the entire lifecycle:
+- **Engineering:** Orchestrates the map-reduce pipeline to clean and process 37.5M rows.  
+- **Analysis:** Generates the 8 Strategic Storyboards and visual insights (Golden Quadrant, Velocity Curves).
+
+- **dynamics_multicore.py**: *The "Core Tech"*.  
+A custom module implementing Byte-Level Chunking and Sharded Writing to enable Big Data processing on standard hardware.
+
+- **Data/prepared/**: *The "Gold Mine"*.  
+Stores the aggregated, analysis-ready datasets (CSV) used for visualization (Lightweight & Portable).
 ---
 
 ## ⚙️ Installation & Getting Started
