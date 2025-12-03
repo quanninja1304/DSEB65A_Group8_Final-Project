@@ -1,6 +1,8 @@
-pandas 
-numpy 
-plotly 
-polars 
-textblob 
+pandas
+numpy
+plotly
 joblib
+textblob
+polars
+ipykernel
+nbformat
