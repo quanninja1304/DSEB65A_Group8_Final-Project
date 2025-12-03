@@ -130,6 +130,7 @@ Gr8_Final_Phase1_2/
 ├── dynamics_multicore.py                # Map-Reduce engine for parallel processing
 ├── custom_template.py                   # Plotly styling configuration
 ├── all_source_counts.txt                # Log: Raw source frequencies
+├── requirements.txt
 └── source_mapping.pkl                   
 ```
 
@@ -156,20 +157,30 @@ pip install -r requirements.txt
 Due to GitHub's file size limits (100MB), the full 4.5GB dataset cannot be hosted directly.  
 This repository employs a **Hybrid Data Strategy** to ensure reproducibility.
 
-#### 🟢 Option A: Demo Mode (Default — No Download Required)
-
-Best for: Checking the code logic, pipeline flow, and viewing final visualizations immediately.
-
-- **Pipeline (`02_Preparation_and_Analysis.ipynb`)**: Automatically loads the included `master_sample.csv` (10k rows) if the full dataset is missing.  
+#### 🟢 Option A: Demo Mode (Default)
+**Use Case:** Rapidly validating the pipeline logic using sample data.
+- **Mechanism:** If no raw or master data is found, the pipeline (`02_Preparation...`) defaults to loading the included `master_sample.csv` (10k rows) for a quick test run.
 
 #### 🔴 Option B: Production Mode (Full Replication)
+**Use Case:** Generating the complete analysis with statistical significance.
 
-1. Download the **Full Master Dataset (4.5GB)** from [3_master_df_files.zip](https://drive.google.com/drive/folders/187zJd0BC5UG2-X-eAVeEbjyWo-Uc1WEz).
-2. Place the file at: `Data/prepared/master_df_consolidated.csv`.  
-3. The code will automatically detect the file and switch to full processing mode.
+You have two ways to run this mode:
 
-> **Technical Note:** Intermediate processing files (`*.pkl`) are excluded via `.gitignore` to keep the repo light.  
-> The pipeline relies on either the Raw CSVs or the Master CSV to rebuild them if needed.
+**1. The Fast Way (Recommended):**
+* Download the **Pre-computed Master Dataset (4.5GB)** from [Google Drive Link](https://drive.google.com/drive/folders/187zJd0BC5UG2-X-eAVeEbjyWo-Uc1WEz).
+* Place it at: 
+```text
+Data/prepared/master_df_consolidated.csv
+```
+* **Result:** The code detects the file and **loads it immediately**, skipping the heavy data engineering steps.
+
+**2. The Hard Way (Build from Scratch):**
+* If you do **NOT** download the master file, the code will trigger the **Data Engineering Engine**.
+* **Result:** It will process all raw source files to **re-generate** the master dataset.
+* *Warning: This process takes ~15-20 minutes depending on your CPU.*
+
+> [!NOTE]
+> **Technical Note:** Intermediate processing files (`*.pkl`) are excluded via `.gitignore`. The pipeline is designed to rebuild them automatically if they are missing.
 
 ---
 
