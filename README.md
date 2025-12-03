@@ -105,7 +105,7 @@ This repository is organized to separate Raw Data, Engineering Logic, and Final 
 Gr8_Final_Phase1_2/
 │
 ├── Data/
-│   ├── prepared/                        # OUTPUT: Analysis-ready datasets
+│   ├── prepared/                        
 │   │   ├── 3_master_df_files.zip        # Backup of large master files
 │   │   ├── chapter1_*.csv               # Content DNA (Sentiment, Complexity, Topic)
 │   │   ├── chapter2_*.csv               # Market Context (Hourly, Weekly, Source, Opportunity)
@@ -113,27 +113,25 @@ Gr8_Final_Phase1_2/
 │   │   ├── master_df_consolidated.csv   # [LARGE] The Final Clean 37M Row Dataset
 │   │   ├── master_df_merged.pkl         # [LARGE] Intermediate state
 │   │   ├── master_df_temporal.pkl       # [LARGE] Intermediate state
-│   │   ├── sec4.*.txt                   # Logs from Feature Engineering phase
+│   │   ├── sec4.*.txt                   
 │   │   ├── sec5.1.1_df_sample.pkl       # Stratified sample for distribution analysis
 │   │   └── source_mapping.pkl           # Logic for source tiering
 │   │
-│   └── [Raw CSV Files]                  # Original source files (Facebook_Economy.csv, etc.)
+│   └── [Raw CSV Files]                  # Original source files
 │
-├── figures/                             # Generated Visualizations
+├── figures/
 │   ├── eda_raw/                         # Initial data exploration plots
-│   ├── section*.json                    # Interactive Plotly objects (Re-runnable)
-│   └── section*.png                     # High-res static charts for reports
+│   ├── section*.json                    # Interactive Plotly objects
+│   └── section*.png                     # Charts for reports
 │
-├── 0_Project Kickoff & Initial Direction Setting.ipynb  # Project planning & Hypothesis
-├── 01_EDA_Raw.ipynb                                     # Diagnostic analysis
-├── 02_Preparation_and_Analysis.ipynb                    # [CORE] The Engineering Pipeline
-├── 03_Storytelling_Report.ipynb                         # [CORE] The Strategic Analysis
-├── 04_Technical_Analysis_Report.ipynb                   # Design Defense & Methodology Report
+├── 0_Project Kickoff & Initial Direction Setting.ipynb  
+├── 01_EDA_Raw.ipynb                                     
+├── 02_Preparation_and_Analysis.ipynb                    
 │
-├── dynamics_multicore.py                # [CORE TECH] Map-Reduce engine for parallel processing
+├── dynamics_multicore.py                # Map-Reduce engine for parallel processing
 ├── custom_template.py                   # Plotly styling configuration
 ├── all_source_counts.txt                # Log: Raw source frequencies
-└── source_mapping.pkl                   # Dictionary for source consolidation
+└── source_mapping.pkl                   
 ```
 
 
@@ -166,8 +164,6 @@ Best for: Checking the code logic, pipeline flow, and viewing final visualizatio
 - **Pipeline (`02_Preparation_and_Analysis.ipynb`)**: Automatically loads the included `master_sample.csv` (10k rows) if the full dataset is missing.  
 
 #### 🔴 Option B: Production Mode (Full Replication)
-
-Best for: Reproducing the exact statistical results reported or grading.
 
 1. Download the **Full Master Dataset (4.5GB)** from [3_master_df_files.zip](https://drive.google.com/drive/folders/187zJd0BC5UG2-X-eAVeEbjyWo-Uc1WEz).
 2. Place the file at: `Data/prepared/master_df_consolidated.csv`.  
