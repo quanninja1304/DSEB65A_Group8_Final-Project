@@ -176,9 +176,9 @@ Gr8_Final_Phase1_2/
 Performs initial health checks on the raw data, identifying fragmentation, skewness, and structural issues.
 
 - **02_Preparation_and_Analysis.ipynb**: *The "Master Engine"*.  
-This single notebook handles the entire lifecycle:
-- **Engineering:** Orchestrates the map-reduce pipeline to clean and process 37.5M rows.  
-- **Analysis:** Generates the 8 Strategic Storyboards and visual insights (Golden Quadrant, Velocity Curves).
+  This notebook handles the entire lifecycle:
+  - **Engineering:** Orchestrates the map-reduce pipeline to clean and process 37.5M rows.  
+  - **Analysis:** Generates the 8 Strategic Storyboards and visual insights (Golden Quadrant, Velocity Curves).
 
 - **dynamics_multicore.py**: *The "Core Tech"*.  
 A custom module implementing Byte-Level Chunking and Sharded Writing to enable Big Data processing on standard hardware.
