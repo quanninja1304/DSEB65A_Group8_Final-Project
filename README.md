@@ -360,7 +360,7 @@ pip install -r requirements.txt
 
 ### 2. Data Setup
 
-Due to GitHub's file size limits (100MB), the full 4.5GB dataset cannot be hosted directly.  
+Due to GitHub's file size limits (100MB), the full 3 master datasets (~22GB) or .zip file (~6GB) cannot be hosted directly.  
 This repository employs a **Hybrid Data Strategy** to ensure reproducibility.
 
 #### 🟢 Option A: Demo Mode (Default)
@@ -373,7 +373,7 @@ This repository employs a **Hybrid Data Strategy** to ensure reproducibility.
 You have two ways to run this mode:
 
 **1. The Fast Way (Recommended):**
-* Download the **Pre-computed Master Dataset (4.5GB)** from [Google Drive Link](https://drive.google.com/drive/folders/1TtXHIht7n5iTJx2qx8-hjjDHJxwsoPg4?usp=drive_link).
+* Download the **Pre-computed Master Dataset (6GB)** from [Google Drive Link](https://drive.google.com/drive/folders/1TtXHIht7n5iTJx2qx8-hjjDHJxwsoPg4?usp=drive_link).
 * Place it at: 
 ```text
 Data/prepared/master_df_consolidated.csv
