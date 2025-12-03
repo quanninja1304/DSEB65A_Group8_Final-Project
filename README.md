@@ -160,7 +160,7 @@ Gr8_Final_Phase1_2/
 │   ├── section*.json                    # Interactive Plotly objects
 │   └── section*.png                     # Charts for reports
 │
-├── 0_Project Kickoff & Initial Direction Setting.ipynb  
+├── A0_Project Kickoff & Initial Direction Setting.ipynb  
 ├── 01_EDA_Raw.ipynb                                     
 ├── 02_Preparation_and_Analysis.ipynb                    
 ├── dynamics_multicore.py                # Map-Reduce engine for parallel processing
