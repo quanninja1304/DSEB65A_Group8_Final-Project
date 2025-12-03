@@ -2,8 +2,7 @@
 
 > **Strategic Data Science Project** analyzing **37.5 million social media records** to determine *what* to write, *when* to post, and *where* to distribute content for maximum ROI.
 
-![Project Banner](figures\section5.4.2.1_platform_velocity_curves.png)
-*(Note: Replace this with a screenshot of the 'Golden Quadrant' or 'Velocity Curves' chart)*
+![Project Banner](figures/section5.4.2.1_platform_velocity_curves.png)
 
 ## 📖 Table of Contents
 - [Overview](#-overview)
