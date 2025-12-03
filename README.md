@@ -53,8 +53,6 @@ These files contain the "Heartbeat" of the news—detailed, minute-by-minute pop
 
 ---
 
----
-
 ## 🛠 Engineering Pipeline: From Raw Logs to Strategic Assets
 
 We transformed raw, fragmented logs into a high-dimensional strategic asset through a rigorous **Data Engineering Pipeline**. This process was architected to handle **Big Data (37.5M rows)** on local hardware without memory overflow.
@@ -89,9 +87,11 @@ We moved beyond simple view counts to engineer **15 Behavioral & Contextual Metr
 
 * **`Initial_Velocity` ($V_0$):** Popularity score at `TimeSlice 1` (First 20 mins). Measures the **Impulse Power** (Click-Through Rate).
 * **`Stickiness_Index` ($S$):** A dimensionless ratio measuring audience retention.
-    $$S = 1 - \left( \frac{V_0}{\text{Final Score}} \right)$$
-    * *High $S$ ($\to 1$):* Organic growth, "Evergreen" content.
-    * *Low $S$ ($\to 0$):* High drop-off, "Flash" or "Clickbait" content.
+  
+  $$S = 1 - \left( \frac{V_0}{\text{Final Score}} \right)$$
+  
+  * **High $S$ ($\to 1$):** Organic growth, "Evergreen" content.
+  * **Low $S$ ($\to 0$):** High drop-off, "Flash" or "Clickbait" content.
 
 #### **B. Psycholinguistics (Content DNA)**
 *Using NLP to decode the psychological triggers in headlines.*
@@ -112,7 +112,9 @@ We moved beyond simple view counts to engineer **15 Behavioral & Contextual Metr
 
 #### **D. Statistical Normalization**
 * **Logarithmic Transformation:** Since the popularity data followed a strict **Pareto Distribution (Power Law)** (80/20 rule), we applied `np.log1p`:
-    $$y = \log_{10}(x+1)$$
+    
+    $$y = \log_{10}(x + 1)$$
+    
     This compresses extreme outliers, revealing the "Hidden Majority" structure for visualization.
     
 ---
@@ -237,6 +239,8 @@ This is the main notebook that handles the entire workflow:
 
 **Run Time (Demo Mode):** < 1 minute.  
 **Run Time (Production Mode):** ~15-20 minutes (due to multiprocessing on 37M rows).
+
+--- 
 
 ## 📜 License
 
