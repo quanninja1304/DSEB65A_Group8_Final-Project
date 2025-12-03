@@ -1,0 +1,43 @@
+# ==========================
+# 1. Project Specific (Large Data)
+# ==========================
+# Chặn file master 4.5GB
+Data/prepared/master_df_consolidated.csv
+
+# Chặn các file pickle trung gian
+*.pkl
+Data/prepared/*.pkl
+
+# Chặn file zip backup
+*.zip
+*.rar
+
+# ==========================
+# 2. Python & Jupyter Notebook
+# ==========================
+# File cache của Python
+__pycache__/
+*.pyc
+
+# Folder checkpoint tự sinh của Jupyter
+.ipynb_checkpoints/
+
+# ==========================
+# 3. Environment & Config
+# ==========================
+# venv
+venv/
+env/
+.env
+
+# ==========================
+# 4. OS & IDE System Files
+# ==========================
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VS Code
+.vscode/

@@ -2,7 +2,7 @@
 
 > **Strategic Data Science Project** analyzing **37.5 million social media records** to determine *what* to write, *when* to post, and *where* to distribute content for maximum ROI.
 
-![Project Banner](Data/prepared/figures/banner_placeholder.png)
+![Project Banner](figures\section5.4.2.1_platform_velocity_curves.png)
 *(Note: Replace this with a screenshot of the 'Golden Quadrant' or 'Velocity Curves' chart)*
 
 ## 📖 Table of Contents
@@ -145,56 +145,56 @@ Gr8_Final_Phase1_2/
 
 ---
 
-## ⚙️ Installation & Usage
+## ⚙️ Installation & Getting Started
 
-### 1. Clone the Repository
+### 1. Environment Setup  
 ```bash
-git clone https://github.com/yourusername/news-popularity-analytics.git
-cd news-popularity-analytics
+git clone https://github.com/quanninja1304/Data-Visualization-G8.git
+pip install -r requirements.txt
 ```
-
-### 2. Environment Setup  
-Make sure you have Python installed. Install dependencies:
-
-```bash
-pip install pandas numpy plotly polars textblob joblib
-```
-
-### 3. Running the Analysis
-- **Step 1**: Run `01_EDA_Raw.ipynb` to see the initial data diagnosis.  
-- **Step 2**: Run `02_Preparation_and_Analysis.ipynb`.
-
-**Note:**  
-This notebook checks for existing processed files in `Data/prepared/`.  
-- If they exist → it loads them (**Fast**)  
-- If not → it triggers the Multicore Processing engine (**Slower ~15–20 mins**)
-
-- **Step 3**: Run `03_Storytelling_Kickoff.ipynb` to view the final interactive visualizations.
 
 ---
 
-## ⚠️ Important: Large File Handling
+### 2. Data Setup
 
-This project generates a **Master Dataset of ~37.5 Million Rows (~4.5 GB RAM)**.  
-Due to GitHub's file size limits, the intermediate processing files are **NOT** included in this repo.
+Due to GitHub's file size limits (100MB), the full 4.5GB dataset cannot be hosted directly.  
+This repository employs a **Hybrid Data Strategy** to ensure reproducibility.
 
-### The Excluded Files:
-- `master_df_consolidated.csv`
-- `master_df_merged.pkl`
-- `master_df_temporal.pkl`
+#### 🟢 Option A: Demo Mode (Default — No Download Required)
 
-### How to handle this:
-You can run **02_Preparation_and_Analysis.ipynb** without downloading them.  
-The code is designed for **Reproducibility** — it will automatically rebuild these files from scratch using the raw CSVs in the root folder.
+Best for: Checking the code logic, pipeline flow, and viewing final visualizations immediately.
+
+- **Pipeline (`02_Preparation_and_Analysis.ipynb`)**: Automatically loads the included `master_sample.csv` (10k rows) if the full dataset is missing.  
+
+#### 🔴 Option B: Production Mode (Full Replication)
+
+Best for: Reproducing the exact statistical results reported or grading.
+
+1. Download the **Full Master Dataset (4.5GB)** from [3_master_df_files.zip](https://drive.google.com/drive/folders/187zJd0BC5UG2-X-eAVeEbjyWo-Uc1WEz).
+2. Place the file at: `Data/prepared/master_df_consolidated.csv`.  
+3. The code will automatically detect the file and switch to full processing mode.
+
+> **Technical Note:** Intermediate processing files (`*.pkl`) are excluded via `.gitignore` to keep the repo light.  
+> The pipeline relies on either the Raw CSVs or the Master CSV to rebuild them if needed.
 
 ---
 
-## Lightweight Assets
-All aggregated files used for the final Storytelling (e.g.,  
-- `chapter1_sentiment_impact.csv`  
-- `chapter3_golden_quadrant_sample.csv`  
-)  
+### 3. Execution Guide
 
-are small (<5MB) and **ARE included** in the `Data/prepared/` folder.
+#### Step 1: Context & Diagnosis (Optional)
 
-You can run the visualization notebook (03) immediately **without rebuilding** the master dataset.
+- **`0_Project Kickoff & Initial Direction Setting.ipynb`**: Review the project hypotheses and planning.  
+- **`01_EDA_Raw.ipynb`**: View the initial data diagnosis and quality checks.
+
+---
+
+#### Step 2: The Core Engine (Pipeline & Analysis)
+
+Run **`02_Preparation_and_Analysis.ipynb`**.  
+This is the main notebook that handles the entire workflow:
+
+- **Data Engineering:** Cleans and processes the raw/sample data.  
+- **Analysis & Visualization:** Calculates behavioral metrics (Velocity, Stickiness) and renders the final interactive charts.
+
+**Run Time (Demo Mode):** < 1 minute.  
+**Run Time (Production Mode):** ~15-20 minutes (due to multiprocessing on 37M rows).
