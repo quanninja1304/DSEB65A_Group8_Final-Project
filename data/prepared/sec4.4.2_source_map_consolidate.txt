@@ -1,0 +1,18 @@
+Consolidated DataFrame file not found. Running the full consolidation process...
+Loading data with temporal features from: master_df_temporal.pkl
+  Original 'Source' cardinality: 5653
+  Determining grouping rules efficiently...
+  Building the final mapping and tier dictionaries...
+  Applying the final map and creating Source_Tier...
+
+--- Consolidation Summary ---
+  Standardized 470 source name variations.
+  Grouped 5003 infrequent sources into 'Other'.
+  Engineered 'Source_Tier' with 3 levels: ['Tier 1 (Mainstream)' 'Tier 2 (Industry Specialists)'
+ 'Tier 3 (Niche/Blog)']
+  Process completed in 37.58 seconds.
+
+DataFrame after source consolidation saved to PKL: master_df_consolidated.pkl
+DataFrame also saved to CSV for chunking: master_df_consolidated.csv
+
+Metrics ready for visualization: Original=5653, New=181

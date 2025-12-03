@@ -1,0 +1,28 @@
+Successfully imported external multiprocessing module.
+--- Engineering Content DNA (Sentiment & Complexity) [Multicore] ---
+    Setup: 10 workers, 30 file chunks.
+  [Step 1] Parallel extraction of unique articles...
+[Parallel(n_jobs=10)]: Using backend LokyBackend with 10 concurrent workers.
+[Parallel(n_jobs=10)]: Done  18 out of  30 | elapsed:   28.2s remaining:   18.8s
+[Parallel(n_jobs=10)]: Done  25 out of  30 | elapsed:   38.3s remaining:    7.6s
+[Parallel(n_jobs=10)]: Done  30 out of  30 | elapsed:   39.8s finished
+    Unique articles extracted: 88677.
+  [Step 2] Parallel NLP Processing (Sentiment/Complexity)...
+d:\_Python\.venv\Lib\site-packages\numpy\_core\fromnumeric.py:57: FutureWarning:
+
+'DataFrame.swapaxes' is deprecated and will be removed in a future version. Please use 'DataFrame.transpose' instead.
+
+[Parallel(n_jobs=10)]: Using backend LokyBackend with 10 concurrent workers.
+[Parallel(n_jobs=10)]: Done   3 out of  10 | elapsed:    4.6s remaining:   10.8s
+[Parallel(n_jobs=10)]: Done   6 out of  10 | elapsed:    4.6s remaining:    3.0s
+[Parallel(n_jobs=10)]: Done  10 out of  10 | elapsed:    4.7s finished
+    NLP calculations complete.
+  [Step 3] Parallel Sharded Merge...
+[Parallel(n_jobs=10)]: Using backend LokyBackend with 10 concurrent workers.
+[Parallel(n_jobs=10)]: Done 18 out of 30 | elapsed:  1.8min remaining:  1.2min
+[Parallel(n_jobs=10)]: Done 25 out of 30 | elapsed:  2.6min remaining:   31.6s
+[Parallel(n_jobs=10)]: Done 30 out of 30 | elapsed:  2.7min finished
+
+    Shards written. Concatenating...
+  Overwrote 'master_df_consolidated.csv' with NLP features.
+  Psycholinguistics Engineering complete in 285.56 seconds.

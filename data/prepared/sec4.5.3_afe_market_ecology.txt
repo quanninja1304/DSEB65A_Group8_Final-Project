@@ -1,0 +1,20 @@
+Successfully imported external multiprocessing module.
+--- Engineering Dimension IV: Market Ecology (Opportunity Score) ---
+    Setup: 14 workers, 80 file chunks.
+  [Step 1] Parallel extraction of timestamps...
+[Parallel(n_jobs=14)]: Using backend LokyBackend with 14 concurrent workers.
+[Parallel(n_jobs=14)]: Done  44 tasks      | elapsed:   26.4s
+[Parallel(n_jobs=14)]: Done  70 out of  80 | elapsed:   34.8s remaining:    4.9s
+[Parallel(n_jobs=14)]: Done  80 out of  80 | elapsed:   37.4s finished
+    Timestamps acquired: 88677 unique articles.
+  [Step 2] Calculating Saturation & Opportunity Scores...
+    Scores calculated. Sample Mean Score: 0.0164
+  [Step 3] Parallel Sharded Merge...
+[Parallel(n_jobs=14)]: Using backend LokyBackend with 14 concurrent workers.
+[Parallel(n_jobs=14)]: Done 44 out of 80 | elapsed:  2.0min
+[Parallel(n_jobs=14)]: Done 70 out of 80 | elapsed:  2.6min remaining:   22.5s
+[Parallel(n_jobs=14)]: Done 80 out of 80 | elapsed:  3.0min finished
+
+    Shards written. Concatenating...
+  Overwrote 'master_df_consolidated.csv' with Market features.
+  Market Engineering complete in 299.32 seconds.
